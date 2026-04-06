@@ -1,0 +1,46 @@
+<div class="container mt-5" style="max-width: 520px">
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h2 class="card-title mb-4">Add Expense</h2>
+
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Title</label>
+        <input
+          class="form-control"
+          [(ngModel)]="title"
+          name="title"
+          placeholder="e.g. Grocery run"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Amount ($)</label>
+        <input
+          class="form-control"
+          type="number"
+          [(ngModel)]="amount"
+          name="amount"
+          placeholder="0.00"
+          min="0"
+        />
+      </div>
+
+      <div class="mb-4">
+        <label class="form-label fw-semibold">Category</label>
+        <select class="form-select" [(ngModel)]="category" name="category">
+          @for (cat of service.categories(); track cat) {
+            <option [value]="cat">{{ cat }}</option>
+          }
+        </select>
+      </div>
+
+      <button
+        class="btn btn-primary w-100"
+        (click)="submit()"
+        [disabled]="!title || !amount"
+      >
+        Add Expense
+      </button>
+    </div>
+  </div>
+</div>

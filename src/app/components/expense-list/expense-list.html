@@ -1,0 +1,14 @@
+<div class="container mt-5">
+  <h2 class="mb-4">All Expenses</h2>
+
+  @if (service.expenses().length === 0) {
+    <p class="text-muted">No expenses yet. <a routerLink="/add">Add one!</a></p>
+  }
+
+  @for (expense of service.expenses(); track expense.id) {
+    <app-expense-item
+      [expense]="expense"
+      (deleteExpense)="onDelete($event)"
+    />
+  }
+</div>

@@ -1,0 +1,48 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Dashboard</h2>
+  <div class="row g-4">
+    <div class="col-md-6">
+      <div class="card text-center border-primary h-100">
+        <div class="card-body">
+          <h5 class="card-title text-muted">Total Expenses</h5>
+          <p class="card-text text-primary fs-3 fw-bold">
+            {{ service.totalExpense() | currency }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card text-center border-success h-100">
+        <div class="card-body">
+          <h5 class="card-title text-muted">Number of Expenses</h5>
+          <p class="card-text text-success fs-3 fw-bold">
+            {{ service.transactionCount() }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card text-center border-warning h-100">
+        <div class="card-body">
+          <h5 class="card-title text-muted">Highest Expense</h5>
+          <p class="card-text text-warning fs-3 fw-bold">
+            {{ service.highestExpense() | currency }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card text-center border-info h-100">
+        <div class="card-body">
+          <h5 class="card-title text-muted">Average Expense per Transaction</h5>
+          <p class="card-text text-info fs-3 fw-bold">
+            {{ service.averageExpense() | currency }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
