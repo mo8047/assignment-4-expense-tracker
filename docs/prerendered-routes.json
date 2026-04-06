@@ -1,0 +1,7 @@
+{
+  "routes": {
+    "/assignment-4-expense-tracker": {},
+    "/assignment-4-expense-tracker/add": {},
+    "/assignment-4-expense-tracker/expenses": {}
+  }
+}
